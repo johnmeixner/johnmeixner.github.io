@@ -1,7 +1,7 @@
-  #Law Professor
+  # Law Professor
 
-  ###Academic Appointments
+  ### Academic Appointments
   Assistant Professor of Law, University of Georgia School of Law
 
-  ###Education
+  ### Education
   - Northwestern University, J.D., Ph.D.
