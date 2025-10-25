@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Meixner - Law Professor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            font-size: 19px; 
+        }
+        body {
+            font-family: 'Inter', sans-serif; 
+            background-color: #ffffff;
+            padding-top: 80px; 
+            color: #374151; 
+        }
+
+        /* Header and Navigation */
+        .top-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb; 
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50; 
+            height: 80px; 
+        }
+        .top-header .container { 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            height: 100%;
+            position: relative; 
+        }
+
+        .desktop-nav { 
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            width: 100%; 
+        }
+
+        .nav-link { 
+            padding-top: 0.5rem; 
+            padding-bottom: 0.5rem;
+            padding-left: 0.75rem; 
+            padding-right: 0.75rem;
+            color: #4b5563; 
+            text-decoration: none; 
+            display: inline-block; 
+            line-height: 1.5; 
+        }
+
+        /* Active state for section links, CV link will not use this */
+        .nav-link.active-section-link { 
+            color: #1d4ed8; 
+            font-weight: 600;
+            border-bottom: 2px solid #1d4ed8; 
+        }
+        .nav-link:hover { /* General hover for all nav links */
+            color: #2563eb; 
+        }
+
+
+        /* Main Content Container */
+        .main-content-container {
+            padding: 1.5rem 1rem; 
+        }
+        
+        @media (min-width: 768px) { 
+            .main-content-container {
+                padding: 2rem 1rem; 
+            }
+        }
+
+        @media (min-width: 1024px) { 
+            .main-content-container {
+                width: 60%; 
+            }
+        }
+        
+        .home-content-block {
+            /* Styles for this block are handled by its parent or inline classes */
+        }
+        .profile-social-links { /* Container for social links under profile */
+            margin-top: 1.5rem; /* Increased space above the social links */
+            display: flex;
+            justify-content: center; /* Center the links */
+            align-items: center; /* Align items vertically for consistent icon appearance */
+            gap: 1rem; /* Space between links */
+        }
+        .profile-social-links a svg { /* Style for custom SVG icons (if any were kept) */
+            width: 1.25em; 
+            height: 1.25em;
+            fill: currentColor; 
+        }
+
+
+        /* Content section styling */
+        .content-section {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 2rem;
+        }
+        .content-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        h2 { /* For section titles like Research, Publications etc. */
+            font-size: 1.75rem; 
+            font-weight: 600; 
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+        }
+        p {
+            line-height: 1.65; 
+            margin-bottom: 1rem; 
+        }
+        p:last-child {
+            margin-bottom: 0; 
+        }
+
+
+        /* Footer */
+        .page-footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 767px) { 
+            body {
+                padding-top: 60px; 
+            }
+            .top-header {
+                height: 60px;
+            }
+            .top-header .container { 
+                padding-left: 1rem;
+                padding-right: 1rem;
+                justify-content: flex-end; 
+            }
+            .desktop-nav {
+                display: none; 
+            }
+            .mobile-menu-button-container { 
+                display: block; 
+            }
+            .mobile-nav {
+                display: none; 
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                right: 0;
+                background-color: white;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 0.5rem 0; 
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            }
+            .mobile-nav.active { 
+                display: block;
+            }
+            .mobile-nav a.nav-link { 
+                display: block;
+                padding: 0.75rem 1rem;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+             .mobile-nav a.nav-link:last-child {
+                border-bottom: none;
+            }
+            /* Active state for section links in mobile */
+            .mobile-nav a.nav-link.active-section-link { 
+                background-color: #eff6ff; 
+                color: #1d4ed8; 
+                border-bottom: 1px solid #f0f0f0; 
+            }
+             .mobile-nav a.nav-link.active-section-link:last-child {
+                border-bottom: none;
+            }
+
+
+            .home-content-block .flex { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .home-content-block .profile-image-name-container {
+                margin-right: 0; 
+                margin-bottom: 1.5rem; 
+                width: auto; 
+            }
+             .home-content-block .about-me-text-container {
+                text-align: center; 
+            }
+            .home-content-block .about-me-text-container p {
+                text-align: left; 
+            }
+
+            h2 { /* Section titles */
+                font-size: 1.5rem; 
+                text-align: center; 
+            }
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <header class="top-header shadow-sm">
+        <div class="container mx-auto px-4"> 
+            <nav class="hidden md:flex space-x-2 items-center desktop-nav">
+                <a href="#home" class="nav-link active-section-link" onclick="showSection('home', this)">Home</a>
+                <a href="#research" class="nav-link" onclick="showSection('research', this)">Research</a>
+                <a href="assets/John_Meixner_CV.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">CV</a>
+                <a href="#teaching" class="nav-link" onclick="showSection('teaching', this)">Teaching</a>
+                <a href="#contact" class="nav-link" onclick="showSection('contact', this)">Contact</a>
+            </nav>
+
+            <div class="md:hidden mobile-menu-button-container">
+                <button id="mobileMenuToggle" aria-label="Open Menu" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+        <nav id="mobileNav" class="md:hidden mobile-nav">
+            <a href="#home" class="nav-link active-section-link" onclick="showSection('home', this); toggleMobileMenu();">Home</a>
+            <a href="#research" class="nav-link" onclick="showSection('research', this); toggleMobileMenu();">Research</a>
+            <a href="assets/John_Meixner_CV.pdf" class="nav-link" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu();">CV</a>
+            <a href="#teaching" class="nav-link" onclick="showSection('teaching', this); toggleMobileMenu();">Teaching</a>
+            <a href="#contact" class="nav-link" onclick="showSection('contact', this); toggleMobileMenu();">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content-container mx-auto"> 
+        <section id="home" class="content-section">
+            <div class="home-content-block"> 
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="profile-image-name-container mb-6 md:mb-0 md:mr-8 flex-shrink-0 text-center md:text-left">
+                        <img src="profile.jpg" alt="John Meixner" class="rounded-lg w-52 h-52 md:w-60 md:h-60 object-cover mx-auto shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e2e8f0/777?text=Profile+Img'; this.alt='Error loading profile image';">
+                        <h1 class="text-3xl md:text-4xl text-gray-800 mt-4 text-center">John Meixner</h1>
+                        <p class="text-lg font-light text-gray-500 tracking-tight text-center mb-0">Assistant Professor</p>
+                        <p class="text-lg font-light text-gray-500 tracking-tight text-center mt-px">UGA School of Law</p>
+                        <div class="profile-social-links">
+                            <a href="mailto:john.meixner@uga.edu" class="text-gray-500 hover:text-blue-600" aria-label="Email">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=youruserid" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" aria-label="Google Scholar">
+                                <i class="fas fa-graduation-cap fa-lg"></i>
+                            </a>
+                            <a href="https://github.com/johnmeixner" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" aria-label="GitHub">
+                                <i class="fab fa-github fa-lg"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/john-meixner-76728644" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-600" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-me-text-container flex-grow">
+                        <p class="text-gray-700 leading-relaxed">
+                            I’m an assistant professor of law at the University of Georgia School of Law. My research focuses on on criminal law (especially sentencing), evidence, and the intersection of law and neuroscience. Within those domains, most of my work focuses on how legal decisionmakers (like judges, jurors, or prosecutors) exercise discretion and make complex judgements. Most of my work is empirical, and informed by my background Ph.D. training in cognitive neuroscience.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-6">
+                            I teach classes in criminal law, evidence, sentencing, and a seminar called law and the mind (focusing on the interseciton of law, psychology, and neuroscience). My teaching is heavily informed by my research, and all of my classes involve exploring what social science can teach us about how legal systems should operate.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-6">
+                            Before becoming a professor, I spent about six years as a federal prosecutor in Detroit, where I led over 100 grand jury investigations, briefed and argued dozens of appeals before the Sixth Circuit, and first-charied multiple jury trials. I also worked closely with my office’s “Restart” program, designed to provide alternatives to incarceration and make criminal justice more equitable. That experience heavily informs my research, which seeks practical ways to reform the criminal justice system, especially in sentencing.  
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-6">
+                            I earned my bachelor’s degree with highest honors and distinction from the University of Michigan in 2006 and my J.D. and Ph.D. (in psychology with emphasis in cognitive neuroscience) from Northwestern University in 2013. I graduated <i>magna cum laude</i> from the School of Law, where I was editor-in-chief of the <i>Northwestern University Law Review</i> and was inducted into the <i>Order of the Coif</i>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="content-section hidden">
+
+            <p class="text-gray-700 leading-relaxed mb-4">
+                My research focuses on on criminal law (especially sentencing), evidence, and the intersection of law and neuroscience. Within those domains, most of my work focuses on legal decisionmakers (like judges, jurors, or prosecutors) exercise discretion and make complex judgements.
+            <p class="text-gray-700 leading-relaxed mb-4">
+                I employ a wide variety of methods in my work. In addition to more traditional work using doctrinal and descriptive methods, I quantitatively and qualitatively code legal texts, such as judicial opinions, briefs, and transcripts; I conduct experiments using both behavioral psychological methods and neuroimaging like EEG and fMRI; and I analyze publicly available databases, such as those made available by the U.S. Courts and U.S. Sentencing Commission.
+            <p class="text-gray-700 leading-relaxed mb-4">
+                I’m also actively engaged in service work that builds on my research. I'm a member of the Systematic Content Analysis of Litigation Events (SCALES) project, working to develop tools to allow large-scale analysis of criminal court records. I'm the chair-elect of the AALS section on criminal procedure. I also co-founded a group at the University of Georgia to share and build interdisciplinary scholarship on crime, law, and criminal justice. 
+
+            <p class="text-gray-700 leading-relaxed mb-4">
+
+            <div class="space-y-6">
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Equality in Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Equality in Sentencing Mitigation
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">Fordham Law Review</span> (forthcoming 2025)
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 pl-2 space-y-1">
+                        <li>Selected for Harvard/Yale/Stanford Junior Faculty Forum (competitive entry)</li>
+                        <li>Selected for Duke Law Empirical Criminal Law Roundtable (competitive entry)</li>
+                    </ul>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Bridging the Criminal Law-Psychological Science Information Gap.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Bridging the Criminal Law/Psychological Science Information Gap
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <i>in</i> <span style="font-variant: small-caps;">Law &: The Compendium on Interdisciplinary Legal Studies</span> (forthcoming 2025)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Shocking Sentences.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Shocking Sentences
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">100 Indiana Law Journal 137</span> (2024)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Modern Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Modern Sentencing Mitigation
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">116 Northwestern University Law Review 1395</span> (2022)
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 pl-2 space-y-1">
+                        <li>Winner of 2023 UGA Law Faculty Research Award for public law</li>
+                        <li>Cited & discussed in <i>Sease v. Comm'r of Correction</i>, 219 Conn. App. 504 (2023) (finding trial counsel ineffective for failing to present mental health mitigation)</li>
+                    </ul>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Neuroscience and Mental Competency Current Uses and Future Potential.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Neuroscience and Mental Competency: Current Uses and Future Potential
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">81 Albany Law Review 995</span> (2018) (invited symposium contribution)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/The Difficulty of Discerning the Effect of Neuroscience a Peer Commentary of Shen et al 2018.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            The Difficulty of Discerning the Effect of Neuroscience: a Peer Commentary of Shen et al. 2018
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">85 Journal of Law and the Biosciences 208 </span> (2018)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Admissibility and Constitutional Issues of the Concealed Information Test in American Courts An Update.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Admissibility and Constitutional Issues of the Concealed Information Test in American Courts: An Update
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <i>in</i> <span style="font-variant: small-caps;">Detecting Concealed Information and Deception: Recent Updates</span> (J. Peter Rosenfeld ed.) (2018)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Jury Simulation Goals.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Jury Simulation Goals
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <i>in</i> <span style="font-variant: small-caps;">The Psychology of Juries: Current Knowledge and a Research Agenda for the Future</span> (with Jonathan J. Koehler) (2017)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/The Use of Neuroscience Evidence in Criminal Proceedings.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            The Use of Neuroscience Evidence in Criminal Proceedings
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">3 Journal of Law and the Biosciences 330 </span> (2016)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/An Empirical Research Agenda for the Forensic Sciences.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            An Empirical Research Agenda for the Forensic Sciences
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">106 Journal of Criminal Law and Criminology 1</span> (with Jonathan J. Koehler) (2016)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Decision Making and the Law Truth Barriers.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Decision Making and the Law: Truth Barriers
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <i>in</i> <span style="font-variant: small-caps;">The Wiley-Blackwell Handbook of Judgment and Decision Making</span> (with Jonathan J. Koehler) (2016)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Applications of Neuroscience in Criminal Law Legal and Methodological Issues.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Applications of Neuroscience in Criminal Law: Legal and Methodological Issues
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">15 Current Neurology and Neuroscience Reports 513</span> (2015)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/The Hidden Daubert Factor How Judges Use Consideration of Error Rates in Assessing Scientific Evidence.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            The Hidden Daubert Factor: How Judges Use Consideration of Error Rates in Assessing Scientific Evidence
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">2014 Wisconsin Law Review 1063</span> (with Shari Seidman Diamond) (2014)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Detecting Knowledge of Incidentally Acquired, Real-World Memories Using a P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Detecting Knowledge of Incidentally Acquired, Real-World Memories Using a P300-Based Concealed Information Test 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">25 Psychological Science 1994</span> (with J. Peter Rosenfeld) (2014)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Does Criminal Diversion Contribute to the Vanishing Civil Trial.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Does Criminal Diversion Contribute to the Vanishing Civil Trial? 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">62 DePaul Law Review 442</span> (with Shari Seidman Diamond) (2013) (invited Clifford symposium contribution)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">90 International Journal of Psychophysiology 118</span> (with J. Peter Rosenfeld, Xiaoqing Hu, Elena Labkovsky, & Michael R. Winograd) (2013)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/P900 a Putative Novel ERP Component in Response to the Signal to a Participant That No Specific Responses are Needed on this Trial.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            P900: a Putative Novel ERP Component in Response to the Signal to a Participant That “No Specific Responses are Needed on this Trial!” 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">38 Applied Psychophysiology and Biofeedback 121</span> (with J. Peter Rosenfeld, Elena Labkovsky, Michael Winograd, Alexander Sokolovsky, Jeff Weisharr, & Tim Ullman) (2013)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Liar, Liar, Jury’s the Trier The Future of Neuroscience-Based Credibility Assessment and the Court.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Liar, Liar, Jury’s the Trier? The Future of Neuroscience-Based Credibility Assessment and the Court 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">106 Northwestern University Law Review 1451</span> (note) (2012)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Damage Anchors on Real Juries.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Damage Anchors on Real Juries 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">8 Journal of Empirical Legal Studies 148</span> (with Shari Seidman Diamond, Mary R. Rose, & Beth Murphy) (2011)
+                    </p>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">81 International Journal of Psychophysiology 60</span> (with Alexander Sokolovsky, Jessica Rothenberg, Elena Labkovsky, & J. Peter Rosenfeld) (2011)
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/A Mock Terrorism Application of the P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            A Mock Terrorism Application of the P300-Based Concealed Information Test 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">48 Psychophysiology 149</span> (with J. Peter Rosenfeld) (2011)
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 mt-2 pl-2 space-y-1">
+                        <li>Discussed in <span style="font-variant: small-caps;">Joshua Dressler & Stephen Garvey</span>, Criminal Law Cases and Materials 135 (9th Ed. 2022).</li>
+                    </ul>
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Lying in the Scanner Covert Countermeasures Disrupt Deception Detection by Functional Magnetic Resonance Imaging.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Lying in the Scanner: Covert Countermeasures Disrupt Deception Detection by Functional Magnetic Resonance Imaging 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">55 NeuroImage 312</span> (with Giorgio Ganis, J. Peter Rosenfeld, Rogier A. Kievit, & Haline E. Schendan) (2011)
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Countermeasure Mechanisms in a P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Countermeasure Mechanisms in a P300-Based Concealed Information Test 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">47 Psychophysiology 57</span> (with J. Peter Rosenfeld) (2010)
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/Assigned Versus Random, Countermeasure-Like Responses in the P300-Based Complex Trial Protocol for Detection of Deception Task Demand Effects.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            Assigned Versus Random, Countermeasure-Like Responses in the P300-Based Complex Trial Protocol for Detection of Deception: Task Demand Effects 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">34 Applied Psychophysiology and Biofeedback 209</span> (with Alexander Haynes, Michael R. Winograd, Jordan Brown, & J. Peter Rosenfeld) (2009)
+                </div>
+                <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <h3 class="font-semibold text-gray-800 text-lg">
+                        <a href="assets/Pubs/The Effects of Asymmetric vs. Symmetric Probability of Targets Following Probe and Irrelevant Stimuli in the Complex Trial Protocol for Detection of Concealed Information with P300.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
+                            The Effects of Asymmetric vs. Symmetric Probability of Targets Following Probe and Irrelevant Stimuli in the Complex Trial Protocol for Detection of Concealed Information with P300 
+                        </a>
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                        <span style="font-variant: small-caps;">98 Physiology and Behavior 10</span> (with J. Peter Rosenfeld, Monica Tang, Michael Winograd, & Elena Labkovsky) (2009)
+        </section>
+
+        <section id="teaching" class="content-section hidden">
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-semibold text-gray-800">1L Criminal Law</h3>
+                    <p class="text-sm text-gray-600">
+                        Spring 2025 <a href="assets/Teaching/Spring 2025 1L Criminal Law Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Spring 2024 <a href="assets/Teaching/Spring 2024 1L Criminal Law Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Spring 2023 <a href="assets/Teaching/Spring 2023 1L Criminal Law Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Evidence</h3>
+                    <p class="text-sm text-gray-600">
+                        Spring 2025 <a href="assets/Teaching/Spring 2025 Evidence Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Fall 2023 <a href="assets/Teaching/Fall 2023 Evidence Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Fall 2022 <a href="assets/Teaching/Fall 2022 Evidence Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Law and the Mind</h3>
+                    <p class="text-sm text-gray-600">
+                        Fall 2025 <a href="assets/Teaching/Fall 2025 Law and the Mind Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Fall 2024 <a href="assets/Teaching/Fall 2024 Law and the Mind Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Spring 2024 <a href="assets/Teaching/Spring 2024 Law and the Mind Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800">Federal Sentencing Law and Policy</h3>
+                    <p class="text-sm text-gray-600">
+                        Spring 2025 <a href="assets/Teaching/Spring 2025 Federal Sentencing Law and Policy Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section hidden">
+            <ul class="space-y-2 text-gray-700">
+                <li><strong>Email:</strong> <a href="mailto:john.meixner@uga.edu" class="text-blue-600 hover:underline">john.meixner@uga.edu</a></li>
+                <li><strong>Office:</strong> University of Georgia School of Law, 205 Hirsch Hall, Athens, GA 30602</li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/johnmeixner" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">github.com/johnmeixner</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/john-meixner-76728644" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">linkedin.com/in/john-meixner-76728644</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="page-footer bg-white text-gray-600 text-center">
+        <div class="main-content-container mx-auto py-4"> 
+            <p class="text-xs">&copy; <span id="currentYear"></span> John Meixner. Built with HTML & Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for section visibility and active link
+        function showSection(sectionId, navElement) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            // Scrolls to the top of the page when a new section is shown
+            window.scrollTo(0, 0); 
+
+            // Update active navigation link for section links only
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('onclick') && link.getAttribute('onclick').includes('showSection')) {
+                    link.classList.remove('active-section-link');
+                }
+            });
+            
+            if (navElement && navElement.getAttribute('onclick') && navElement.getAttribute('onclick').includes('showSection')) {
+                navElement.classList.add('active-section-link');
+                const hrefValue = navElement.getAttribute('href');
+                const otherNavType = navElement.closest('.desktop-nav') ? '#mobileNav' : '.desktop-nav';
+                const counterpartLink = document.querySelector(`${otherNavType} a[href="${hrefValue}"]`);
+                if (counterpartLink) {
+                    counterpartLink.classList.add('active-section-link');
+                }
+            }
+        }
+
+        const mobileMenuButton = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuButton && mobileNav) { 
+            const menuIcon = mobileMenuButton.querySelector('i'); 
+            
+            function toggleMobileMenu() {
+                mobileNav.classList.toggle('active');
+                if (menuIcon) { 
+                    if (mobileNav.classList.contains('active')) {
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-times');
+                        mobileMenuButton.setAttribute('aria-label', 'Close Menu');
+                    } else {
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                        mobileMenuButton.setAttribute('aria-label', 'Open Menu');
+                    }
+                }
+            }
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+        }
+
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+        
+        window.onload = () => {
+            function handleHashChange() {
+                const hash = window.location.hash.substring(1);
+                const defaultSection = 'home';
+                let sectionToLoad = hash || defaultSection;
+                
+                if (!document.getElementById(sectionToLoad)) {
+                    sectionToLoad = defaultSection; 
+                }
+
+                const desktopLinkToActivate = document.querySelector(`.desktop-nav a[href="#${sectionToLoad}"]`);
+                showSection(sectionToLoad, desktopLinkToActivate); 
+            }
+
+            window.addEventListener('hashchange', handleHashChange);
+            handleHashChange(); 
+
+            document.addEventListener('click', function(event) {
+                if (mobileNav && mobileMenuButton && mobileNav.classList.contains('active')) {
+                    const isClickInsideNav = mobileNav.contains(event.target);
+                    const isClickOnToggleButton = mobileMenuButton.contains(event.target);
+
+                    if (!isClickInsideNav && !isClickOnToggleButton) {
+                        if (typeof toggleMobileMenu === 'function') {
+                           toggleMobileMenu();
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
+
+
+
+
