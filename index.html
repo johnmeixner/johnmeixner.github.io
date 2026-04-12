@@ -10,6 +10,7 @@
     <style>
         html {
             font-size: 19px; 
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Inter', sans-serif; 
@@ -55,16 +56,14 @@
             line-height: 1.5; 
         }
 
-        /* Active state for section links, CV link will not use this */
         .nav-link.active-section-link { 
             color: #1d4ed8; 
             font-weight: 600;
             border-bottom: 2px solid #1d4ed8; 
         }
-        .nav-link:hover { /* General hover for all nav links */
+        .nav-link:hover {
             color: #2563eb; 
         }
-
 
         /* Main Content Container */
         .main-content-container {
@@ -82,26 +81,17 @@
                 width: 60%; 
             }
             .main-content-container.wide-research {
-                width: 80%; /* Research tab is wider */
+                width: 80%; /* Research tab is wider for the two-column layout */
             }
         }
         
-        .home-content-block {
-            /* Styles for this block are handled by its parent or inline classes */
-        }
-        .profile-social-links { /* Container for social links under profile */
-            margin-top: 1.5rem; /* Increased space above the social links */
+        .profile-social-links {
+            margin-top: 1.5rem;
             display: flex;
-            justify-content: center; /* Center the links */
-            align-items: center; /* Align items vertically for consistent icon appearance */
-            gap: 1rem; /* Space between links */
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
-        .profile-social-links a svg { /* Style for custom SVG icons (if any were kept) */
-            width: 1.25em; 
-            height: 1.25em;
-            fill: currentColor; 
-        }
-
 
         /* Content section styling */
         .content-section {
@@ -113,10 +103,10 @@
             border-bottom: none;
             margin-bottom: 0;
         }
-        h2 { /* For section titles like Research, Publications etc. */
+        h2 { 
             font-size: 1.75rem; 
             font-weight: 600; 
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #111827;
         }
         h1, h2, h3, h4, h5, h6 {
@@ -129,7 +119,6 @@
         p:last-child {
             margin-bottom: 0; 
         }
-
 
         /* Footer */
         .page-footer {
@@ -154,9 +143,6 @@
             .desktop-nav {
                 display: none; 
             }
-            .mobile-menu-button-container { 
-                display: block; 
-            }
             .mobile-nav {
                 display: none; 
                 position: absolute;
@@ -177,19 +163,13 @@
                 text-align: center;
                 border-bottom: 1px solid #f0f0f0;
             }
-             .mobile-nav a.nav-link:last-child {
+            .mobile-nav a.nav-link:last-child {
                 border-bottom: none;
             }
-            /* Active state for section links in mobile */
             .mobile-nav a.nav-link.active-section-link { 
                 background-color: #eff6ff; 
                 color: #1d4ed8; 
-                border-bottom: 1px solid #f0f0f0; 
             }
-             .mobile-nav a.nav-link.active-section-link:last-child {
-                border-bottom: none;
-            }
-
 
             .home-content-block .flex { 
                 flex-direction: column; 
@@ -207,9 +187,9 @@
                 text-align: left; 
             }
 
-            h2 { /* Section titles */
-                font-size: 1.5rem; 
-                text-align: center; 
+            h2 {
+                font-size: 1.5rem;
+                text-align: center;
             }
         }
     </style>
@@ -226,7 +206,7 @@
                 <a href="#contact" class="nav-link" onclick="showSection('contact', this)">Contact</a>
             </nav>
 
-            <div class="md:hidden mobile-menu-button-container">
+            <div class="md:hidden">
                 <button id="mobileMenuToggle" aria-label="Open Menu" class="text-gray-600 hover:text-gray-800 focus:outline-none">
                     <i class="fas fa-bars fa-lg"></i>
                 </button>
@@ -242,11 +222,12 @@
     </header>
 
     <main class="main-content-container mx-auto"> 
+        <!-- HOME SECTION -->
         <section id="home" class="content-section">
             <div class="home-content-block"> 
                 <div class="flex flex-col md:flex-row items-start md:items-center">
                     <div class="profile-image-name-container mb-6 md:mb-0 md:mr-8 flex-shrink-0 text-center md:text-left">
-                        <img src="profile.jpg" alt="John Meixner" class="rounded-lg w-52 h-52 md:w-60 md:h-60 object-cover mx-auto shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/150x150/e2e8f0/777?text=Profile+Img'; this.alt='Error loading profile image';">
+                        <img src="profile.jpg" alt="John Meixner" class="rounded-lg w-52 h-52 md:w-60 md:h-60 object-cover mx-auto shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/240x240/e2e8f0/777?text=Profile+Img';">
                         <h1 class="text-3xl md:text-4xl text-gray-800 mt-4 text-center">John Meixner</h1>
                         <p class="text-lg font-light text-gray-500 tracking-tight text-center mb-0">Assistant Professor</p>
                         <p class="text-lg font-light text-gray-500 tracking-tight text-center mt-px">UGA School of Law</p>
@@ -270,27 +251,26 @@
                             I’m an assistant professor of law at the University of Georgia School of Law. My research focuses on on criminal law (especially sentencing), evidence, and the intersection of law and neuroscience. Within those domains, most of my work focuses on how legal decisionmakers (like judges, jurors, or prosecutors) exercise discretion and make complex judgements. Most of my work is empirical, and informed by my background Ph.D. training in cognitive neuroscience.
                         </p>
                         <p class="text-gray-700 leading-relaxed mt-6">
-                            I teach classes in criminal law, evidence, sentencing, and a seminar called law and the mind (focusing on the interseciton of law, psychology, and neuroscience). My teaching is heavily informed by my research, and all of my classes involve exploring what social science can teach us about how legal systems should operate.
-                        </d>
+                            I teach classes in criminal law, evidence, sentencing, and a seminar called law and the mind (focusing on the intersection of law, psychology, and neuroscience). My teaching is heavily informed by my research, and all of my classes involve exploring what social science can teach us about how legal systems should operate.
+                        </p>
                         <p class="text-gray-700 leading-relaxed mt-6">
-                            Before becoming a professor, I spent about six years as a federal prosecutor in Detroit, where I led over 100 grand jury investigations, briefed and argued dozens of appeals before the Sixth Circuit, and first-charied multiple jury trials. I also worked closely with my office’s “Restart” program, designed to provide alternatives to incarceration and make criminal justice more equitable. That experience heavily informs my research, which seeks practical ways to reform the criminal justice system, especially in sentencing.  
+                            Before becoming a professor, I spent about six years as a federal prosecutor in Detroit, where I led over 100 grand jury investigations, briefed and argued dozens of appeals before the Sixth Circuit, and first-chaired multiple jury trials. I also worked closely with my office’s “Restart” program, designed to provide alternatives to incarceration and make criminal justice more equitable. That experience heavily informs my research, which seeks practical ways to reform the criminal justice system, especially in sentencing.  
                         </p>
                         <p class="text-gray-700 leading-relaxed mt-6">
                             I earned my bachelor’s degree with highest honors and distinction from the University of Michigan in 2006 and my J.D. and Ph.D. (in psychology with emphasis in cognitive neuroscience) from Northwestern University in 2013. I graduated <i>magna cum laude</i> from the School of Law, where I was editor-in-chief of the <i>Northwestern University Law Review</i> and was inducted into the <i>Order of the Coif</i>.
                         </p>
-
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- RESEARCH & PUBLICATIONS SECTION -->
         <section id="research" class="content-section hidden">
-            <!-- New Two-Column Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 md:gap-12">
                 
                 <!-- Left Column: Research Narrative -->
                 <div class="md:sticky md:top-24 md:self-start">
-                    <h2 class="text-center md:text-left hidden">Research</h2> <!-- Kept for structure but hidden, you can also delete -->
+                    <h2 class="text-center md:text-left">Research</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         My research focuses on on criminal law (especially sentencing), evidence, and the intersection of law and neuroscience. Within those domains, most of my work focuses on how legal decisionmakers (like judges, jurors, or prosecutors) exercise discretion and make complex judgements.
                     </p>
@@ -305,8 +285,9 @@
                 <!-- Right Column: Publications -->
                 <div>
                     <h2 class="text-center">Publications</h2>
-                    <div class="space-y-2 mt-4 md:mt-0">
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                    <div class="space-y-4 mt-4 md:mt-0">
+                        <!-- Pubs are listed in the order you provided -->
+                         <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
                             <h3 class="font-semibold text-gray-800 text-base">
                                 <a href="assets/Pubs/Equality in Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
                                       The New Lawlessness in Sentencing
@@ -323,11 +304,9 @@
                                 </a>
                             </h3>
                             <p class="text-xs text-gray-600">
-                                <i>in</i> <span style="font-variant: small-caps;">Law &: The Compendium on Interdisciplinary Legal Studies</span> (forthcoming 2027)
+                                <i>in</i> <span style="font-variant: small-caps;">Law & Psychology: The Compendium on Interdisciplinary Legal Studies</span> (forthcoming 2027)
                             </p>
                         </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
                         <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
                             <h3 class="font-semibold text-gray-800 text-base">
                                 <a href="assets/Pubs/Equality in Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
@@ -342,6 +321,8 @@
                                 <li>Selected for Duke Law Empirical Criminal Law Roundtable (competitive entry)</li>
                             </ul>
                         </div>
+                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
+                            <h3 class="font-semibold text-gray-800 text-base">
                                 <a href="assets/Pubs/Shocking Sentences.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
                                     Shocking Sentences
                                 </a>
@@ -452,7 +433,7 @@
                             </h3>
                             <p class="text-xs text-gray-600">
                                 <span style="font-variant: small-caps;">2014 Wisconsin Law Review 1063</span> (with Shari Seidman Diamond) (2014)
-                            </i>
+                            </p>
                         </div>
                         <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
                             <h3 class="font-semibold text-gray-800 text-base">
@@ -496,7 +477,7 @@
                         </div>
                         <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
                             <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="assets/Pubs/Liar, Liar, Jury’s the Trier The Future of Neuroscience-Based Credibility Assessment and the Court.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-6g00 hover:underline">
+                                <a href="assets/Pubs/Liar, Liar, Jury’s the Trier The Future of Neuroscience-Based Credibility Assessment and the Court.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
                                     Liar, Liar, Jury’s the Trier? The Future of Neuroscience-Based Credibility Assessment and the Court 
                                 </a>
                             </h3>
@@ -579,15 +560,16 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
+        <!-- TEACHING SECTION -->
         <section id="teaching" class="content-section hidden">
-            <div class="space-y-4">
+            <h2 class="text-center md:text-left">Teaching</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h3 class="font-semibold text-gray-800">1L Criminal Law</h3>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 mt-1">
                         Spring 2025 <a href="assets/Teaching/Spring 2025 1L Criminal Law Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
                     </p>
                     <p class="text-sm text-gray-600">
@@ -599,7 +581,7 @@
                 </div>
                 <div>
                     <h3 class="font-semibold text-gray-800">Evidence</h3>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 mt-1">
                         Spring 2025 <a href="assets/Teaching/Spring 2025 Evidence Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
                     </p>
                     <p class="text-sm text-gray-600">
@@ -611,7 +593,7 @@
                 </div>
                 <div>
                     <h3 class="font-semibold text-gray-800">Law and the Mind</h3>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 mt-1">
                         Fall 2025 <a href="assets/Teaching/Fall 2025 Law and the Mind Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
                     </p>
                     <p class="text-sm text-gray-600">
@@ -623,15 +605,17 @@
                 </div>
                 <div>
                     <h3 class="font-semibold text-gray-800">Federal Sentencing Law and Policy</h3>
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-gray-600 mt-1">
                         Spring 2025 <a href="assets/Teaching/Spring 2025 Federal Sentencing Law and Policy Syllabus.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">[Syllabus]</a>
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section id="contact" class="content-section hidden">
-            <ul class="space-y-2 text-gray-700">
+            <h2 class="text-center md:text-left">Contact</h2>
+            <ul class="space-y-4 text-gray-700">
                 <li><strong>Email:</strong> <a href="mailto:john.meixner@uga.edu" class="text-blue-600 hover:underline">john.meixner@uga.edu</a></li>
                 <li><strong>Office:</strong> University of Georgia School of Law, 205 Hirsch Hall, Athens, GA 30602</li>
                 <li><strong>GitHub:</strong> <a href="https://github.com/johnmeixner" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">github.com/johnmeixner</a></li>
@@ -647,9 +631,8 @@
     </footer>
 
     <script>
-        // JavaScript for section visibility and active link
         function showSection(sectionId, navElement) {
-            const mainContent = document.querySelector('.main-content-container'); // Get the main content area
+            const mainContent = document.querySelector('.main-content-container');
 
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.add('hidden');
@@ -659,17 +642,14 @@
                 targetSection.classList.remove('hidden');
             }
 
-            // Add/Remove wide class for research section
             if (sectionId === 'research') {
                 mainContent.classList.add('wide-research');
             } else {
                 mainContent.classList.remove('wide-research');
             }
 
-            // Scrolls to the top of the page when a new section is shown
             window.scrollTo(0, 0); 
 
-            // Update active navigation link for section links only
             document.querySelectorAll('.nav-link').forEach(link => {
                 if (link.getAttribute('onclick') && link.getAttribute('onclick').includes('showSection')) {
                     link.classList.remove('active-section-link');
@@ -748,8 +728,3 @@
     </script>
 </body>
 </html>
-"
-
-
-
-
