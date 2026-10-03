@@ -122,6 +122,96 @@
             margin-bottom: 0; 
         }
 
+        /* Publications */
+        .pub-group-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6b7280;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.4rem;
+            margin-top: 2rem;
+        }
+        .pub-list > li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .pub-list > li:last-child {
+            border-bottom: none;
+        }
+        .pub-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+        .pub-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.35;
+            color: #1f2937;
+        }
+        .pub-title:hover {
+            color: #2563eb;
+        }
+        .pub-year {
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            font-variant-numeric: tabular-nums;
+        }
+        .pub-cite, .pub-coauthors {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin: 0.25rem 0 0;
+        }
+        .pub-cite {
+            color: #4b5563;
+        }
+        .pub-coauthors {
+            color: #6b7280;
+            margin-top: 0.1rem;
+        }
+        .sc {
+            font-variant: small-caps;
+            letter-spacing: 0.02em;
+        }
+        .pub-notes {
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #4b5563;
+        }
+        .pub-notes li {
+            display: flex;
+            gap: 0.45rem;
+            margin-top: 0.15rem;
+        }
+        .pub-notes i.fas {
+            color: #b45309;
+            width: 0.9rem;
+            text-align: center;
+            margin-top: 0.2rem;
+        }
+        .pub-links {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.45rem;
+        }
+        .pub-link {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
+            border-radius: 4px;
+            padding: 0.05rem 0.45rem;
+        }
+        .pub-link:hover {
+            background-color: #eff6ff;
+        }
+
         /* Footer */
         .page-footer {
             border-top: 1px solid #e5e7eb;
@@ -285,279 +375,329 @@
 
                 <div>
                     <h2 class="text-center">Publications</h2>
-                    <div class="space-y-4 mt-4 md:mt-0">
-                         <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=6556486" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                      The New Lawlessness in Sentencing
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">___ Florida Law Review ___</span> (forthcoming 2027)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6683758" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Bridging the Criminal Law/Psychological Science Information Gap
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <i>in</i> <span style="font-variant: small-caps;">Law & Psychology: The Compendium on Interdisciplinary Legal Studies</span> (forthcoming 2027)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=5241163" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Equality in Sentencing Mitigation
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">94 Fordham Law Review 891</span> (2025)
-                            </p>
-                            <ul class="list-disc list-inside text-xs text-gray-600 mt-2 pl-2 space-y-1">
-                                <li>Selected for Harvard/Yale/Stanford Junior Faculty Forum (competitive entry)</li>
-                                <li>Selected for Duke Empirical Criminal Law Roundtable (competitive entry)</li>
+
+                    <h3 class="pub-group-title">Forthcoming</h3>
+                    <ul class="pub-list">
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=6556486" target="_blank" rel="noopener noreferrer" class="pub-title">The New Lawlessness in Sentencing</a>
+                                <span class="pub-year">2027</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">___ Florida Law Review ___</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=6556486" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6683758" target="_blank" rel="noopener noreferrer" class="pub-title">Bridging the Criminal Law/Psychological Science Information Gap</a>
+                                <span class="pub-year">2027</span>
+                            </div>
+                            <p class="pub-cite"><i>in</i> <span class="sc">Law &amp; Psychology: The Compendium on Interdisciplinary Legal Studies</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6683758" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="pub-group-title">Law Review &amp; Legal Journal Articles</h3>
+                    <ul class="pub-list">
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=5241163" target="_blank" rel="noopener noreferrer" class="pub-title">Equality in Sentencing Mitigation</a>
+                                <span class="pub-year">2025</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">94 Fordham Law Review 891</span></p>
+                            <ul class="pub-notes">
+                                <li><i class="fas fa-award"></i>Selected for Harvard/Yale/Stanford Junior Faculty Forum (competitive entry)</li>
+                                <li><i class="fas fa-award"></i>Selected for Duke Empirical Criminal Law Roundtable (competitive entry)</li>
                             </ul>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=4759836" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Shocking Sentences
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">100 Indiana Law Journal 137</span> (2024)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=4095494" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Modern Sentencing Mitigation
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">116 Northwestern University Law Review 1395</span> (2022)
-                            </p>
-                            <ul class="list-disc list-inside text-xs text-gray-600 mt-2 pl-2 space-y-1">
-                                <li>Winner of 2023 UGA Law Faculty Research Award for public law</li>
-                                <li>Cited & discussed in <i>Sease v. Comm'r of Correction</i>, 219 Conn. App. 504 (2023) (finding trial counsel ineffective for failing to present mental health mitigation)</li>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=5241163" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Equality in Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=4759836" target="_blank" rel="noopener noreferrer" class="pub-title">Shocking Sentences</a>
+                                <span class="pub-year">2024</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">100 Indiana Law Journal 137</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=4759836" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Shocking Sentences.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=4095494" target="_blank" rel="noopener noreferrer" class="pub-title">Modern Sentencing Mitigation</a>
+                                <span class="pub-year">2022</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">116 Northwestern University Law Review 1395</span></p>
+                            <ul class="pub-notes">
+                                <li><i class="fas fa-award"></i>Winner of 2023 UGA Law Faculty Research Award for public law</li>
+                                <li><i class="fas fa-gavel"></i><span>Cited &amp; discussed in <i>Sease v. Comm'r of Correction</i>, 219 Conn. App. 504 (2023) (finding trial counsel ineffective for failing to present mental health mitigation)</span></li>
                             </ul>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=3707297" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Neuroscience and Mental Competency: Current Uses and Future Potential
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">81 Albany Law Review 995</span> (2018) (invited symposium contribution)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=3707294" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    The Difficulty of Discerning the Effect of Neuroscience: a Peer Commentary of Shen et al. 2018
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">5 Journal of Law and the Biosciences 208</span> (2018)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=3707292" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Admissibility and Constitutional Issues of the Concealed Information Test in American Courts: An Update
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <i>in</i> <span style="font-variant: small-caps;">Detecting Concealed Information and Deception: Recent Updates</span> (J. Peter Rosenfeld ed.) (2018)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2470632" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Jury Simulation Goals
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <i>in</i> <span style="font-variant: small-caps;">The Psychology of Juries: Current Knowledge and a Research Agenda for the Future</span> (with Jonathan J. Koehler) (2017)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=3131386" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    The Use of Neuroscience Evidence in Criminal Proceedings
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">3 Journal of Law and the Biosciences 330 </span> (2016)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2766724" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    An Empirical Research Agenda for the Forensic Sciences
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">106 Journal of Criminal Law and Criminology 1</span> (with Jonathan J. Koehler) (2016)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2217003" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Decision Making and the Law: Truth Barriers
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <i>in</i> <span style="font-variant: small-caps;">The Wiley-Blackwell Handbook of Judgment and Decision Making</span> (with Jonathan J. Koehler) (2016)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2536580" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Applications of Neuroscience in Criminal Law: Legal and Methodological Issues
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">15 Current Neurology and Neuroscience Reports 513</span> (2015)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2406073" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    The Hidden Daubert Factor: How Judges Use Consideration of Error Rates in Assessing Scientific Evidence
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">2014 Wisconsin Law Review 1063</span> (with Shari Seidman Diamond) (2014)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2536559" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Detecting Knowledge of Incidentally Acquired, Real-World Memories Using a P300-Based Concealed Information Test 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">25 Psychological Science 1994</span> (with J. Peter Rosenfeld) (2014)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2316949" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Does Criminal Diversion Contribute to the Vanishing Civil Trial? 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">62 DePaul Law Review 442</span> (with Shari Seidman Diamond) (2013) (invited Clifford symposium contribution)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="assets/Pubs/Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">90 International Journal of Psychophysiology 118</span> (with J. Peter Rosenfeld, Xiaoqing Hu, Elena Labkovsky, & Michael R. Winograd) (2013)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2316953" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    P900: a Putative Novel ERP Component in Response to the Signal to a Participant That “No Specific Responses are Needed on this Trial!” 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">38 Applied Psychophysiology and Biofeedback 121</span> (with J. Peter Rosenfeld, Elena Labkovsky, Michael Winograd, Alexander Sokolovsky, Jeff Weisharr, & Tim Ullman) (2013)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=1855786" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Liar, Liar, Jury’s the Trier? The Future of Neuroscience-Based Credibility Assessment and the Court 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">106 Northwestern University Law Review 1451</span> (note) (2012)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=1883861" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Damage Anchors on Real Juries 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">8 Journal of Empirical Legal Studies 148</span> (with Shari Seidman Diamond, Mary R. Rose, & Beth Murphy) (2011)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="assets/Pubs/A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">81 International Journal of Psychophysiology 60</span> (with Alexander Sokolovsky, Jessica Rothenberg, Elena Labkovsky, & J. Peter Rosenfeld) (2011)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=1787321" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    A Mock Terrorism Application of the P300-Based Concealed Information Test 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">48 Psychophysiology 149</span> (with J. Peter Rosenfeld) (2011)
-                            </p>
-                            <ul class="list-disc list-inside text-xs text-gray-600 mt-2 pl-2 space-y-1">
-                                <li>Discussed in <span style="font-variant: small-caps;">Joshua Dressler & Stephen Garvey</span>, Criminal Law Cases and Materials 135 (9th Ed. 2022).</li>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=4095494" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Modern Sentencing Mitigation.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=3707297" target="_blank" rel="noopener noreferrer" class="pub-title">Neuroscience and Mental Competency: Current Uses and Future Potential</a>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">81 Albany Law Review 995</span> (invited symposium contribution)</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=3707297" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Neuroscience and Mental Competency Current Uses and Future Potential.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=3131386" target="_blank" rel="noopener noreferrer" class="pub-title">The Use of Neuroscience Evidence in Criminal Proceedings</a>
+                                <span class="pub-year">2016</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">3 Journal of Law and the Biosciences 330</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=3131386" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/The Use of Neuroscience Evidence in Criminal Proceedings.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2766724" target="_blank" rel="noopener noreferrer" class="pub-title">An Empirical Research Agenda for the Forensic Sciences</a>
+                                <span class="pub-year">2016</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">106 Journal of Criminal Law and Criminology 1</span></p>
+                            <p class="pub-coauthors">with Jonathan J. Koehler</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2766724" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/An Empirical Research Agenda for the Forensic Sciences.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2406073" target="_blank" rel="noopener noreferrer" class="pub-title">The Hidden Daubert Factor: How Judges Use Consideration of Error Rates in Assessing Scientific Evidence</a>
+                                <span class="pub-year">2014</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">2014 Wisconsin Law Review 1063</span></p>
+                            <p class="pub-coauthors">with Shari Seidman Diamond</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2406073" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/The Hidden Daubert Factor How Judges Use Consideration of Error Rates in Assessing Scientific Evidence.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2316949" target="_blank" rel="noopener noreferrer" class="pub-title">Does Criminal Diversion Contribute to the Vanishing Civil Trial?</a>
+                                <span class="pub-year">2013</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">62 DePaul Law Review 442</span> (invited Clifford symposium contribution)</p>
+                            <p class="pub-coauthors">with Shari Seidman Diamond</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2316949" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Does Criminal Diversion Contribute to the Vanishing Civil Trial.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=1855786" target="_blank" rel="noopener noreferrer" class="pub-title">Liar, Liar, Jury’s the Trier? The Future of Neuroscience-Based Credibility Assessment and the Court</a>
+                                <span class="pub-year">2012</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">106 Northwestern University Law Review 1451</span> (note)</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=1855786" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Liar, Liar, Jury’s the Trier The Future of Neuroscience-Based Credibility Assessment and the Court.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=1883861" target="_blank" rel="noopener noreferrer" class="pub-title">Damage Anchors on Real Juries</a>
+                                <span class="pub-year">2011</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">8 Journal of Empirical Legal Studies 148</span></p>
+                            <p class="pub-coauthors">with Shari Seidman Diamond, Mary R. Rose, &amp; Beth Murphy</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=1883861" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Damage Anchors on Real Juries.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="pub-group-title">Book Chapters &amp; Commentary</h3>
+                    <ul class="pub-list">
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=3707294" target="_blank" rel="noopener noreferrer" class="pub-title">The Difficulty of Discerning the Effect of Neuroscience: a Peer Commentary of Shen et al. 2018</a>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">5 Journal of Law and the Biosciences 208</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=3707294" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/The Difficulty of Discerning the Effect of Neuroscience a Peer Commentary of Shen et al 2018.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=3707292" target="_blank" rel="noopener noreferrer" class="pub-title">Admissibility and Constitutional Issues of the Concealed Information Test in American Courts: An Update</a>
+                                <span class="pub-year">2018</span>
+                            </div>
+                            <p class="pub-cite"><i>in</i> <span class="sc">Detecting Concealed Information and Deception: Recent Updates</span> (J. Peter Rosenfeld ed.)</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=3707292" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Admissibility and Constitutional Issues of the Concealed Information Test in American Courts An Update.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2470632" target="_blank" rel="noopener noreferrer" class="pub-title">Jury Simulation Goals</a>
+                                <span class="pub-year">2017</span>
+                            </div>
+                            <p class="pub-cite"><i>in</i> <span class="sc">The Psychology of Juries: Current Knowledge and a Research Agenda for the Future</span></p>
+                            <p class="pub-coauthors">with Jonathan J. Koehler</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2470632" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Jury Simulation Goals.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2217003" target="_blank" rel="noopener noreferrer" class="pub-title">Decision Making and the Law: Truth Barriers</a>
+                                <span class="pub-year">2016</span>
+                            </div>
+                            <p class="pub-cite"><i>in</i> <span class="sc">The Wiley-Blackwell Handbook of Judgment and Decision Making</span></p>
+                            <p class="pub-coauthors">with Jonathan J. Koehler</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2217003" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Decision Making and the Law Truth Barriers.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3 class="pub-group-title">Scientific Articles</h3>
+                    <ul class="pub-list">
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2536580" target="_blank" rel="noopener noreferrer" class="pub-title">Applications of Neuroscience in Criminal Law: Legal and Methodological Issues</a>
+                                <span class="pub-year">2015</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">15 Current Neurology and Neuroscience Reports 513</span></p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2536580" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Applications of Neuroscience in Criminal Law Legal and Methodological Issues.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2536559" target="_blank" rel="noopener noreferrer" class="pub-title">Detecting Knowledge of Incidentally Acquired, Real-World Memories Using a P300-Based Concealed Information Test</a>
+                                <span class="pub-year">2014</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">25 Psychological Science 1994</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2536559" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Detecting Knowledge of Incidentally Acquired, Real-World Memories Using a P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="assets/Pubs/Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="pub-title">Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information</a>
+                                <span class="pub-year">2013</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">90 International Journal of Psychophysiology 118</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld, Xiaoqing Hu, Elena Labkovsky, &amp; Michael R. Winograd</p>
+                            <div class="pub-links">
+                                <a href="assets/Pubs/Review of Recent Studies and Issues Regarding the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2316953" target="_blank" rel="noopener noreferrer" class="pub-title">P900: a Putative Novel ERP Component in Response to the Signal to a Participant That “No Specific Responses are Needed on this Trial!”</a>
+                                <span class="pub-year">2013</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">38 Applied Psychophysiology and Biofeedback 121</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld, Elena Labkovsky, Michael Winograd, Alexander Sokolovsky, Jeff Weisharr, &amp; Tim Ullman</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2316953" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/P900 a Putative Novel ERP Component in Response to the Signal to a Participant That No Specific Responses are Needed on this Trial.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="assets/Pubs/A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="pub-title">A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information</a>
+                                <span class="pub-year">2011</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">81 International Journal of Psychophysiology 60</span></p>
+                            <p class="pub-coauthors">with Alexander Sokolovsky, Jessica Rothenberg, Elena Labkovsky, &amp; J. Peter Rosenfeld</p>
+                            <div class="pub-links">
+                                <a href="assets/Pubs/A Novel Countermeasure Against the Reaction Time Index of Countermeasure Use in the P300-Based Complex Trial Protocol for Detection of Concealed Information.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=1787321" target="_blank" rel="noopener noreferrer" class="pub-title">A Mock Terrorism Application of the P300-Based Concealed Information Test</a>
+                                <span class="pub-year">2011</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">48 Psychophysiology 149</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld</p>
+                            <ul class="pub-notes">
+                                <li><i class="fas fa-book"></i><span>Discussed in <span class="sc">Joshua Dressler &amp; Stephen Garvey</span>, Criminal Law Cases and Materials 135 (9th Ed. 2022)</span></li>
                             </ul>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=2316977" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Lying in the Scanner: Covert Countermeasures Disrupt Deception Detection by Functional Magnetic Resonance Imaging 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">55 NeuroImage 312</span> (with Giorgio Ganis, J. Peter Rosenfeld, Rogier A. Kievit, & Haline E. Schendan) (2011)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=1855787" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Countermeasure Mechanisms in a P300-Based Concealed Information Test 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">47 Psychophysiology 57</span> (with J. Peter Rosenfeld) (2010)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="https://papers.ssrn.com/abstract=1855788" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    Assigned Versus Random, Countermeasure-Like Responses in the P300-Based Complex Trial Protocol for Detection of Deception: Task Demand Effects 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">34 Applied Psychophysiology and Biofeedback 209</span> (with Alexander Haynes, Michael R. Winograd, Jordan Brown, & J. Peter Rosenfeld) (2009)
-                            </p>
-                        </div>
-                        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-sm">
-                            <h3 class="font-semibold text-gray-800 text-base">
-                                <a href="assets/Pubs/Asymmetric vs Symmetric Probability CTP P300.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 hover:underline">
-                                    The Effects of Asymmetric vs. Symmetric Probability of Targets Following Probe and Irrelevant Stimuli in the Complex Trial Protocol for Detection of Concealed Information with P300 
-                                </a>
-                            </h3>
-                            <p class="text-xs text-gray-600">
-                                <span style="font-variant: small-caps;">98 Physiology and Behavior 10</span> (with J. Peter Rosenfeld, Monica Tang, Michael Winograd, & Elena Labkovsky) (2009)
-                            </p>
-                        </div>
-                    </div>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=1787321" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/A Mock Terrorism Application of the P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=2316977" target="_blank" rel="noopener noreferrer" class="pub-title">Lying in the Scanner: Covert Countermeasures Disrupt Deception Detection by Functional Magnetic Resonance Imaging</a>
+                                <span class="pub-year">2011</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">55 NeuroImage 312</span></p>
+                            <p class="pub-coauthors">with Giorgio Ganis, J. Peter Rosenfeld, Rogier A. Kievit, &amp; Haline E. Schendan</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=2316977" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Lying in the Scanner Covert Countermeasures Disrupt Deception Detection by Functional Magnetic Resonance Imaging.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=1855787" target="_blank" rel="noopener noreferrer" class="pub-title">Countermeasure Mechanisms in a P300-Based Concealed Information Test</a>
+                                <span class="pub-year">2010</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">47 Psychophysiology 57</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=1855787" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Countermeasure Mechanisms in a P300-Based Concealed Information Test.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="https://papers.ssrn.com/abstract=1855788" target="_blank" rel="noopener noreferrer" class="pub-title">Assigned Versus Random, Countermeasure-Like Responses in the P300-Based Complex Trial Protocol for Detection of Deception: Task Demand Effects</a>
+                                <span class="pub-year">2009</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">34 Applied Psychophysiology and Biofeedback 209</span></p>
+                            <p class="pub-coauthors">with Alexander Haynes, Michael R. Winograd, Jordan Brown, &amp; J. Peter Rosenfeld</p>
+                            <div class="pub-links">
+                                <a href="https://papers.ssrn.com/abstract=1855788" target="_blank" rel="noopener noreferrer" class="pub-link">SSRN</a>
+                                <a href="assets/Pubs/Assigned Versus Random, Countermeasure-Like Responses in the P300-Based Complex Trial Protocol for Detection of Deception Task Demand Effects.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pub-head">
+                                <a href="assets/Pubs/Asymmetric vs Symmetric Probability CTP P300.pdf" target="_blank" rel="noopener noreferrer" class="pub-title">The Effects of Asymmetric vs. Symmetric Probability of Targets Following Probe and Irrelevant Stimuli in the Complex Trial Protocol for Detection of Concealed Information with P300</a>
+                                <span class="pub-year">2009</span>
+                            </div>
+                            <p class="pub-cite"><span class="sc">98 Physiology and Behavior 10</span></p>
+                            <p class="pub-coauthors">with J. Peter Rosenfeld, Monica Tang, Michael Winograd, &amp; Elena Labkovsky</p>
+                            <div class="pub-links">
+                                <a href="assets/Pubs/Asymmetric vs Symmetric Probability CTP P300.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">PDF</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
